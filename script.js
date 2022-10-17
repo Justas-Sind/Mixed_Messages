@@ -16,15 +16,16 @@ let resultText = [];
 
 // Determination of output text
 for (key in textVariations) {
+    let variantOption = rndmnmbr(textVariations[key].length)
     switch (key) {
         case 'variantOne':
-            resultText.push(`Welcome Mr. ${textVariations.variantOne[rndmnmbr(textVariations.variantOne.length)]}.`);
+            resultText.push(`Welcome Mr. ${textVariations[key][variantOption]}.`);
             break;
         case 'variantTwo':
-            resultText.push(`We hope you had a good time ${textVariations.variantTwo[rndmnmbr(textVariations.variantTwo.length)]}.`);
+            resultText.push(`We hope you had a good time ${textVariations[key][variantOption]}.`);
             break;
         case 'variantThree':
-            resultText.push(`We will be happy to ${textVariations.variantThree[rndmnmbr(textVariations.variantThree.length)]}.`);
+            resultText.push(`We will be happy to ${textVariations[key][variantOption]}.`);
             break;
         default:
             resultText.push('Something is wrong, I can feel it');
