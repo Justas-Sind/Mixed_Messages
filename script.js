@@ -33,8 +33,19 @@ for (key in textVariations) {
 }
 
 // Function outputting final text
-function resultArrFunc(arr) {
+function resultArrFunc() {
     return resultText.join(' ')
 }
 
-console.log(resultArrFunc(resultText))
+// Variable assignment
+const button = document.getElementById('button');
+const msgText = document.getElementById('mixmsg');
+
+// Event function
+function messageEvent() {
+    msgText.innerHTML = resultArrFunc();
+    msgText.style.display = 'block';
+};
+
+// Event handler
+button.addEventListener('click', messageEvent);
