@@ -4,37 +4,20 @@ function rndmnmbr(nmbr) {
 };
 
 // Object with text variations
-const textVariations = {
+const textVar = {
     variantOne: ['Snuffles', 'Crab', 'Kitto', 'Doggo'],
     variantTwo: ['on the bed', 'in the box', 'on the pile of clothes'],
     variantThree: ['play with you outside', 'be your slave', 'give you mountain of food']
 
 };
 
-// Empty output array
-let resultText = [];
-
-// Determination of output text
-for (key in textVariations) {
-    let variantOption = rndmnmbr(textVariations[key].length)
-    switch (key) {
-        case 'variantOne':
-            resultText.push(`Welcome Mr. ${textVariations[key][variantOption]}.`);
-            break;
-        case 'variantTwo':
-            resultText.push(`We hope you had a good time ${textVariations[key][variantOption]}.`);
-            break;
-        case 'variantThree':
-            resultText.push(`We will be happy to ${textVariations[key][variantOption]}.`);
-            break;
-        default:
-            resultText.push('Something is wrong, I can feel it');
-    }
-}
-
 // Function outputting final text
 function resultArrFunc() {
-    return resultText.join(' ')
+    let randomNumberOne = rndmnmbr(textVar.variantOne.length);
+    let randomNumberTwo = rndmnmbr(textVar.variantTwo.length);
+    let randomNumberThree = rndmnmbr(textVar.variantThree.length);
+    const resultText = `Welcome Mr. ${textVar.variantOne[randomNumberOne]}. We hope you had a good time ${textVar.variantTwo[randomNumberTwo]}. We will be happy to ${textVar.variantThree[randomNumberThree]}.`;
+    return resultText;
 }
 
 // Variable assignment
